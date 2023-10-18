@@ -40,8 +40,8 @@ Documentation: Both
 Workflow:
 
 * River designed the interface, specified what libaries would be included
-* River wrote the skeleton using Pug (HTML), the style using CSS, and the interaction using JavaScript.
-* At the same time, Patrick figured how to communicate data between Python-driven backend and JavaScript-driven frontend.
+* River wrote the frontend skeleton, style and interaction using React.js.
+* At the same time, Patrick developed the APIs using Flask.
 * Test: Frontend and Backend both were finished. We both provide test cases to test our project. If anything went wrong, we fixed it.
 
 ## Technical Documentation & Reflection
@@ -54,7 +54,7 @@ Technical Resources used:
   - CSS
   - Python
 - Libraries:
-  - [React](https://react.dev/)
+  - [React.js](https://react.dev/)
   - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 
 Challenges & Possible Improvement:
@@ -63,7 +63,7 @@ TODO
 
 ## User Manual for the GUI
 
-
+TODO
 
 ## Licensing and FAIR Data Principles
 
