@@ -1,3 +1,18 @@
 .App {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
+  background-color: #212427;
+  display: flex;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.ant-menu {
+  background-color: #121212; /* Replace with your desired background color */
 }
