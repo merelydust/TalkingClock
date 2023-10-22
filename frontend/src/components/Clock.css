@@ -4,3 +4,13 @@
     font-family: Orbitron;
     letter-spacing: 7px;
 }
+
+.line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    width: 128px;
+}

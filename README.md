@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
 - [TalkingClock](#talkingclock)
   - [Installation](#installation)
@@ -18,31 +18,48 @@ Talking Clock Project for VT
 
 ## Installation
 
+We develop the web project on Chrome. For the best experience, please open our web project in Chrome, as we have not adapted to other browsers.
+
+And we use the Web Speech API in Chrome. So please make sure your Chrome is up to date. You can check Browser compatibility [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#browser_compatibility).
+
 ### On MacOS
 
 1. Install Node.js.
    * By using installer on the official [Node.js download page](https://nodejs.org/en/download/)
    * By using [Homebrew](https://medium.com/@hayasnc/how-to-install-nodejs-and-npm-on-mac-using-homebrew-b33780287d8f)
 
+2. Install [NPM](https://www.npmjs.com/).
+
+3. Locate into `/TalkingClock/frontend`, run `npm install`, `npm start`
+
+4. The command line will print something like this:
+
+   ```bash
+   Compiled successfully!
+   
+   You can now view frontend in the browser.
+   
+     Local:            http://localhost:3000
+     On Your Network:  http://192.111.1.111:3000
+   ```
+
+5. Check our talking clock page in the Chrome by using the "Local" address. You can also open this page on your phone by using the "on Your Network" page.
+
 ### On Windows
 
-1. Get a Ubuntu system.
-2. Following steps are the same as those in MacOS instruction.
+TODO
 
 ## Team Organization & Project Workflow
 
-Frontend: Xiaoling (River) Lin
+Xiaoling (River) Lin, Yuxing (Patrick) Ouyang
 
-Backend: Yuxing (Patrick) Ouyang
-
-Documentation: Both
+Documentation: 
 
 Workflow:
 
 * River designed the interface, specified what libaries would be included
-* River wrote the frontend skeleton, style and interaction using React.js.
-* At the same time, Patrick developed the APIs using Flask.
-* Test: Frontend and Backend both were finished. We both provide test cases to test our project. If anything went wrong, we fixed it.
+* River wrote the frontend, style and interaction using React.js.
+* We both provide test cases to test our project. If anything went wrong, we fixed it.
 
 ## Technical Documentation & Reflection
 
@@ -60,7 +77,7 @@ Technical Resources used:
 
 Challenges & Possible Improvement:
 
-TODO
+* River: When I finished the major part of the code, I found it hard to add a theme customization into it. Since I didn't think about it during the process, and forgot to use CSS variable for defining colors. So it became extremely annoying if I had to rewrite all the colors. Finally I had to leave it. In the future, I should list every function I want and think about how to write it before I start.
 
 ## User Manual for the GUI
 

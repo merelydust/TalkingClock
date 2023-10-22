@@ -1,4 +1,8 @@
-# Import flask and datetime module for showing date and time
+# NB: This file is not used in our project
+# We plan to, but it turns out frontend can accomplish every function
+# so we save the trouble to request from backend
+# We leave the file here for further reference
+
 from flask import Flask
 import datetime
 
