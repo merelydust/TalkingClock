@@ -1,5 +1,8 @@
 // Importing modules
-import React, { useState, useEffect } from "react";
+import React, { 
+  // useState,
+  // useEffect 
+} from "react";
 import Clock from './components/Clock';
 import "./App.css";
 import { ClockCircleOutlined, PlayCircleOutlined } from '@ant-design/icons';
@@ -28,14 +31,12 @@ const items = [
 ];
  
 function App() {
-    // usestate for setting a javascript
-    // object for storing and using data
-    const [data, setdata] = useState({
-        name: "",
-        age: 0,
-        date: "",
-        programming: "",
-    });
+    // const [data, setdata] = useState({
+    //     name: "",
+    //     age: 0,
+    //     date: "",
+    //     programming: "",
+    // });
  
     // Using useEffect for single rendering
     // useEffect(() => {
