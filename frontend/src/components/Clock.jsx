@@ -1,5 +1,6 @@
 // src/Clock.jsx
 import React, { useState, useEffect } from 'react';
+import { tts } from '../utils/tts';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { Button, Modal, TimePicker} from 'antd';
@@ -28,6 +29,24 @@ function Clock() {
     setIsModalOpen(false);
   };
 
+  const tick = () => {
+    setTime(new Date());
+  }
+
+  const onChange = (time, timeString) => {
+    // console.log(time, timeString);
+    setMyTime(timeString);
+  };
+
+  const readMyTime = () => {
+    readTime(myTime);
+  }
+
+  const readTime = (timeStr) => {
+    // leave out the seconds: 01:02:03 => 01:02
+    tts(timeStr.slice(0, 5));
+  }
+
   useEffect(() => {
     const timerID = setInterval(
       () => tick(),
@@ -39,19 +58,6 @@ function Clock() {
     };
   }, []);
 
-  const tick = () => {
-    setTime(new Date());
-  }
-
-  const onChange = (time, timeString) => {
-    // console.log(time, timeString);
-    setMyTime(timeString);
-  };
-
-  const readMyTime = () => {
-    console.log(myTime);
-  }
-
   return (
     <div className="clock-container">
       <h2>{time.toLocaleTimeString()}</h2>
@@ -59,8 +65,17 @@ function Clock() {
 
       </div>
       <Button
+        onClick={() => readTime(time.toLocaleTimeString())}
+        style={{
+          width: 200,
+          fontWeight: 600,
+          marginRight: 64,
+        }}
+      >Read Current Time</Button>
+      <Button
         onClick={clickTestBtn}
         style={{
+          width: 200,
           fontWeight: 600,
         }}
       >Read My Time</Button>

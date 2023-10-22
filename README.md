@@ -56,6 +56,7 @@ Technical Resources used:
 - Libraries:
   - [React.js](https://react.dev/)
   - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+  - [Web Speech API in Chrome](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 
 Challenges & Possible Improvement:
 
