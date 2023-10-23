@@ -1,8 +1,5 @@
 // Importing modules
-import React, { 
-  // useState,
-  // useEffect 
-} from "react";
+import React from "react";
 import Clock from './components/Clock';
 import "./App.css";
 // import { ClockCircleOutlined, PlayCircleOutlined } from '@ant-design/icons';
@@ -31,33 +28,6 @@ import "./App.css";
 // ];
  
 function App() {
-    // const [data, setdata] = useState({
-    //     name: "",
-    //     age: 0,
-    //     date: "",
-    //     programming: "",
-    // });
- 
-    // Using useEffect for single rendering
-    // useEffect(() => {
-    //     // Using fetch to fetch the api from 
-    //     // flask server it will be redirected to proxy
-    //     fetch("/data").then((res) =>
-    //         res.json().then((data) => {
-    //             // Setting a data from api
-    //             setdata({
-    //                 name: data.Name,
-    //                 age: data.Age,
-    //                 date: data.Date,
-    //                 programming: data.programming,
-    //             });
-    //         })
-    //     );
-    // }, []);
-
-    // const onClick = (e) => {
-    //     console.log('click ', e);
-    //   };
  
     return (
         <div className="App">
@@ -75,7 +45,6 @@ function App() {
             /> */}
             <div className="display">
                 <Clock />
-                <div className="assistant"></div>
             </div>
         </div>
     );

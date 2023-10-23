@@ -80,9 +80,10 @@ Documentation:
 
 Workflow:
 
-* River crafted the user interface, selected the necessary libraries, and developed the frontend, encompassing the web framework, styling, and interactive elements, utilizing React.js and Ant Design. And River documented the procedure for setting up and running the web page, ensuring a seamless installation process for users.
-* Patrick provided test cases to test our project. If anything went wrong, we fixed it.
+* River developed Web UI in frontend folder. She crafted the user interface, including styling and interactive elements, utilizing React.js and Ant Design. And River documented the procedure for setting up and running the web page, ensuring a seamless installation process for users.
+* Patrick developed TUI.
 * Ömer
+* All team members provided test cases to test our project. If anything went wrong, we fixed it.
 
 ## Technical Documentation & Reflection
 
