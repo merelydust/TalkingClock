@@ -18,7 +18,7 @@ Our project features two UI(user interface) types and a folder for audio recordi
 
 1. **Web UI:** The folder [frontend](./frontend) is a version of Web UI which offers a time announcement feature that is available in **18** different languages. Additionally, users have the option to read a custom time and adjust the speaking speed, with a range of 0.5 to 2, increasing in increments of 0.5. We have intentionally designed the speed setting in this manner to optimize the performance of Google's Web Speech API, which tends to be less effective when the speed is either extremely slow or fast. Furthermore, we have determined that a step increment of less than 0.5 is often imperceptible to human listeners, thus we have settled on 0.5 as the optimal step size.
 2. **Terminal UI:** The folder [tui](./tui) contains an alternative version of the terminal UI. This version allows the system to announce the time using custom audio recordings, developed based on our mashup strategy. For additional details and instructions, please refer to its [README.md](./tui/README.md).
-3. **Audios:** The folder [audios](./audios) contains audio recordings in both English and Chinese. The English recordings come from the [asterisk-tim](https://github.com/paulseward/asterisk-tim) repository on GitHub, courtesy of Paul Seward-Prior. Meanwhile, the Chinese recordings were crafted by River and Patrick, based on the rules explained by the [linguistic structure of Chinese numeral expressions](./audios/zh/README.md).
+3. **Audios:** The folder [audios](./audios) contains audio recordings in both English and Chinese. The English recordings come from the [asterisk-tim](https://github.com/paulseward/asterisk-tim) repository on GitHub, courtesy of Paul Seward-Prior. Meanwhile, the Chinese recordings were crafted by River and Patrick, based on the rules explained by the [linguistic structure of Chinese numeral expressions](./audios/zh-CN/README.md).
 
 
 ## Installation
@@ -92,11 +92,14 @@ Technical Resources used:
   - JavaScript
   - HTML
   - CSS
-  - Python
+  - Python(3.11+)
 - Libraries:
   - [React.js](https://react.dev/)
   - [Ant Design](https://ant.design/)
   - [Web Speech API in Chrome](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+  - [textual](https://github.com/Textualize/textual)
+  - [gTTS](https://github.com/pndurette/gTTS)
+  - [pydub](https://github.com/jiaaro/pydub)
 
 Challenges & Possible Improvement:
 
@@ -105,6 +108,8 @@ Challenges & Possible Improvement:
   Challenges: Upon completing the principal portion of the code, I encountered difficulties incorporating a theme customization feature. Regrettably, the initial planning and process did not include the utilization of CSS variables to define colors. This omission rendered the task of rewriting all the color codes particularly exasperating. Consequently, due to time constraints, I was compelled to abandon this addition.
 
   Possible Improvements: Moving forward, a comprehensive listing and thoughtful contemplation of desired functionalities is imperative prior to the commencement of the coding process. This proactive approach will undoubtedly facilitate a smoother development experience and the seamless integration of various features.
+
+* Yuxing (Patrick): The TUI version of our talking clock has certain constraints compared to its WebUI counterpart. It currently lacks features like TTS speed adjustment and time modification. Furthermore, it also lacks the potential of integrating more functionalities and AI features. The TUI approach, while appealing to tech enthusiasts, is inherently more basic and rigid. Nonetheless, it offers us a chance to interact with a talking clock directly from the terminal.
 
 ## User Manual for the GUI
 
