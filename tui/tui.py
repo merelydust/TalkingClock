@@ -30,7 +30,7 @@ class SpeakingClock(App):
 
     languages = {
         "English": "en",
-        "Chinese": "zh",
+        "Chinese": "zh-CN",
     }
 
     def __init__(self, speakers: Dict[str, speaker.Speak]):
