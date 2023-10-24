@@ -14,7 +14,10 @@
 
 # TalkingClock
 
-Talking Clock Project for VT
+Our project utilizes two types of graphical user interfaces (GUIs).
+
+1. **Web UI:** This interface offers a time announcement feature that is available in **18** different languages. Additionally, users have the option to read a custom time and adjust the speaking speed, with a range of 0.5 to 2, increasing in increments of 0.5. We have intentionally designed the speed setting in this manner to optimize the performance of Google's Web Speech API, which tends to be less effective when the speed is either extremely slow or fast. Furthermore, we have determined that a step increment of less than 0.5 is often imperceptible to human listeners, thus we have settled on 0.5 as the optimal step size.
+1. **Terminal UI:** This interface integrates our recordings in Chinese, alongside online sources of human voices in English, for the time announcement feature. This integration allows the system to announce the time using our custom voices. For additional details and instructions, please refer to this [link](https://github.com/merelydust/TalkingClock/blob/main/tui/README.md).
 
 ## Installation
 
@@ -26,19 +29,15 @@ And we use the Web Speech API in Chrome. So please make sure your Chrome is up t
 
 1. Navigate to the `build` folder
 
-   ```bash
-   cd /TalkingClock/frontend/build
-   ```
+   ```cd TalkingClock/frontend/build```
 
-2.  Start the HTTP Server
+2. Start the HTTP Server
 
-   ```bash
-   python -m http.server # python3
-   ```
+   ```python -m http.server```
 
 ​	This will start the server on the default port, which is 8000. You should see output similar to the following:
 
-​	`Serving HTTP on 0.0.0.0 port 8000 ...`
+```Serving HTTP on 0.0.0.0 port 8000 ...```
 
 3. Once the server is running, open Chrome and navigate to http://localhost:8000. Enjoy the Talking Clock!
 
@@ -52,7 +51,7 @@ On MacOS
 
 2. Install [NPM](https://www.npmjs.com/).
 
-3. Locate into `/TalkingClock/frontend`, run `npm install`, `npm start`
+3. Locate into `TalkingClock/frontend`, run `npm install`, `npm start`
 
 4. The command line will print something like this:
 
