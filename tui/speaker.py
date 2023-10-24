@@ -49,7 +49,7 @@ Speak = Callable[[datetime], None]
 
 
 class ChineseMashupSpeaker(object):
-    lang = "zh"
+    lang = "zh-CN"
 
     def __init__(self, sample_dir):
         self.sample_dir = sample_dir
@@ -107,7 +107,7 @@ def new_gtts_speaker(lang: str) -> Speak:
 
 
 if __name__ == "__main__":
-    speaker = ChineseMashupSpeaker("../audios/zh")
+    speaker = ChineseMashupSpeaker("../audios/zh-CN")
     speaker(datetime.now())
     speaker = EnglishMashupSpeaker("../audios/en")
     speaker(datetime.now())
