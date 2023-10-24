@@ -2,26 +2,21 @@ from datetime import datetime
 import os
 import platform
 import tempfile
+from typing import Callable, List
 
 from gtts import gTTS, gTTSError
 from pydub import AudioSegment
 
 
 __all__ = [
+    "Speak",
     "ChineseMashupSpeaker",
     "EnglishMashupSpeaker",
     "new_gtts_speaker",
 ]
 
 
-def concat_wav_files(*files):
-    output = AudioSegment.empty()
-    for file in files:
-        output += AudioSegment.from_file(file, "wav")
-    return output
-
-
-def play_file(file: str):
+def play_file(file: str) -> None:
     os_name = platform.system()
     if os_name == "Darwin":
         os.system(f"afplay {file}")
@@ -29,38 +24,48 @@ def play_file(file: str):
         os.system(f"play {file}")
 
 
-def play_audio_seg(audio_seg: AudioSegment):
+def play_audio_segment(audio: AudioSegment) -> None:
     tmp_wav = tempfile.mktemp()
-    audio_seg.export(tmp_wav, format="wav")
+    audio.export(tmp_wav, format="wav")
     play_file(tmp_wav)
     os.remove(tmp_wav)
 
 
-def play_gtts(tts: gTTS):
+def play_gtts(tts: gTTS) -> None:
     tmp_mp3 = tempfile.mktemp()
     tts.save(tmp_mp3)
     play_file(tmp_mp3)
     os.remove(tmp_mp3)
 
 
+def concat_wav_files(files) -> AudioSegment:
+    output = AudioSegment.empty()
+    for file in files:
+        output += AudioSegment.from_file(file, "wav")
+    return output
+
+
+Speak = Callable[[datetime], None]
+
+
 class ChineseMashupSpeaker(object):
     lang = "zh"
 
-    def __init__(self, audio_dir):
-        self.audio_dir = audio_dir
+    def __init__(self, sample_dir):
+        self.sample_dir = sample_dir
 
-    def __call__(self, now_time: datetime):
-        files = map(lambda f: os.path.join(self.audio_dir, f), [
+    def __call__(self, now_time: datetime) -> None:
+        files = map(lambda f: os.path.join(self.sample_dir, f), [
             "pips.wav",
             *ChineseMashupSpeaker.split_number(int(now_time.strftime("%I"))),
             "dian.wav",
             *ChineseMashupSpeaker.split_number(now_time.minute),
             "fen.wav",
         ])
-        play_audio_seg(concat_wav_files(*files))
+        play_audio_segment(concat_wav_files(files))
 
     @staticmethod
-    def split_number(n):
+    def split_number(n) -> List[str]:
         if n < 0 or n > 100:
             return []
         if 0 < n <= 10:
@@ -76,20 +81,20 @@ class ChineseMashupSpeaker(object):
 class EnglishMashupSpeaker(object):
     lang = "en"
 
-    def __init__(self, audio_dir):
-        self.audio_dir = audio_dir
+    def __init__(self, sample_dir: str):
+        self.sample_dir = sample_dir
 
-    def __call__(self, now_time: datetime):
-        files = map(lambda f: os.path.join(self.audio_dir, f), [
+    def __call__(self, now_time: datetime) -> None:
+        files = map(lambda f: os.path.join(self.sample_dir, f), [
             "bang.wav",
             f"{now_time.minute:02}.wav",
             "past.wav",
             f"{now_time.strftime("%I")}.wav",
         ])
-        play_audio_seg(concat_wav_files(*files))
+        play_audio_segment(concat_wav_files(files))
 
 
-def new_gtts_speaker(lang):
+def new_gtts_speaker(lang: str) -> Speak:
     def speak(now_time: datetime):
         text = now_time.strftime("%I:%M")
         try:
