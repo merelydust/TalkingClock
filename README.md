@@ -16,16 +16,16 @@
 
 Our project features two UI(user interface) types and a folder for audio recordings.
 
-1. **Web UI:** The folder [frontend](./frontend) is a version of web UI which offers a time announcement feature that is available in **18** different languages. Additionally, users have the option to read a custom time and adjust the speaking speed, with a range of 0.5 to 2, increasing in increments of 0.5. We have intentionally designed the speed setting in this manner to optimize the performance of Google's Web Speech API, which tends to be less effective when the speed is either extremely slow or fast. Furthermore, we have determined that a step increment of less than 0.5 is often imperceptible to human listeners, thus we have settled on 0.5 as the optimal step size.
+1. **Web UI:** The folder [frontend](./frontend) is a version of Web UI which offers a time announcement feature that is available in **18** different languages. Additionally, users have the option to read a custom time and adjust the speaking speed, with a range of 0.5 to 2, increasing in increments of 0.5. We have intentionally designed the speed setting in this manner to optimize the performance of Google's Web Speech API, which tends to be less effective when the speed is either extremely slow or fast. Furthermore, we have determined that a step increment of less than 0.5 is often imperceptible to human listeners, thus we have settled on 0.5 as the optimal step size.
 2. **Terminal UI:** The folder [tui](./tui) contains an alternative version of the terminal UI. This version allows the system to announce the time using custom audio recordings, developed based on our mashup strategy. For additional details and instructions, please refer to its [README.md](./tui/README.md).
 3. **Audios:** The folder [audios](./audios) contains audio recordings in both English and Chinese. The English recordings come from the [asterisk-tim](https://github.com/paulseward/asterisk-tim) repository on GitHub, courtesy of Paul Seward-Prior. Meanwhile, the Chinese recordings were crafted by River and Patrick, based on the rules explained by the [linguistic structure of Chinese numeral expressions](./audios/zh/README.md).
 
 
 ## Installation
 
-We develop the web project on Chrome. For the best experience, please open our web project in Chrome, as we have not adapted to other browsers.
+We develop the web project on **Chrome** and use its Web Speech API. For the best experience, please open our web project in Chrome, as we have not adapted to other browsers.
 
-And we use the Web Speech API in Chrome. So please make sure your Chrome is up-to-date. You can check Browser compatibility [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#browser_compatibility).
+And make sure your Chrome is up-to-date to use the TTS ability. You can check Browser compatibility [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#browser_compatibility).
 
 ### Using Python
 
@@ -77,15 +77,11 @@ On Windows
 
 Xiaoling (River) Lin, Yuxing (Patrick) Ouyang, Ömer Tarik Özyilmaz
 
-Workflow:
-
-We work together using a workflow similar to [SCRUM](https://en.wikipedia.org/wiki/Scrum_(software_development)). River laid the groundwork for the project by outlining its features and tasks. She set the project in motion and also developed the web UI version, focusing on the broader features of a talking clock. Ömer, with his expertise in AI and data, provides us with actionable AI recommendations and establishes the FAIR principles for the project. Meanwhile, Patrick is responsible for the TUI version, enabling the clock to integrate with custom audio recordings.
-
-Contributions:
+* We use the workflow similar to [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development).
 
 * River developed Web UI in [frontend](./frontend) folder. She crafted the user interface, including styling and interactive elements, utilizing React.js and Ant Design. And River documented the procedure for setting up and running the web page, ensuring a seamless installation process for users.
-* Patrick developed TUI in [tui](./tui) folder.
-* Ömer
+* Patrick developed TUI in [tui](./tui) folder, enabling the clock to integrate with custom audio recordings.
+* Ömer contributed Turkish language support, wrote the user manual, recorded the video presentation, established the FAIR principles for the project. 
 * All team members provided test cases to test our project. If anything went wrong, we fixed it.
 
 ## Technical Documentation & Reflection
