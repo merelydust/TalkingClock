@@ -37,7 +37,7 @@ python tui.py
 
 ![](./tui_screenshot.png)
 
-Upon execution, the current time will be prominently displayed in the terminal's center. Users can select the desired language via the selector at the bottom. The selected language will influence the audible announcement of the time. We employ [`gTTs`](https://github.com/pndurette/gTTS) for text-to-speech functionality.
+Upon execution, the current time will be prominently displayed in the terminal's center. Users can select the desired language via the selector at the bottom. The selected language will influence the audible announcement of the time. We employ [`gTTs`](https://github.com/pndurette/gTTS) for text-to-speech functionality. Currently there are only two ways to interact with this application as showing on the footer of it: press `s` to speak current time or press `q` to quit it.
 
 ### Advanced: Audio Mashup
 

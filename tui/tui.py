@@ -4,12 +4,12 @@ from typing import Dict
 
 from textual import on
 from textual.app import App, ComposeResult
-from textual.widgets import Digits, Select
+from textual.widgets import Digits, Footer, Header, Select
 
 import speaker
 
 
-class ClockApp(App):
+class SpeakingClock(App):
     CSS = """
     Screen {
         align: center middle;
@@ -19,6 +19,7 @@ class ClockApp(App):
     }
     #selector {
         dock: bottom;
+        height: 4.4;
     }
     """
 
@@ -38,8 +39,10 @@ class ClockApp(App):
         self.speakers = speakers
 
     def compose(self) -> ComposeResult:
+        yield Header()
         yield Digits("", id="clock")
-        yield Select(ClockApp.languages.items(), id="selector", value="en")
+        yield Select(SpeakingClock.languages.items(), id="selector", value="en")
+        yield Footer()
 
     def on_ready(self) -> None:
         self.update_clock()
@@ -66,7 +69,7 @@ def main() -> None:
             speakers[lang] = speaker.EnglishMashupSpeaker(audio_dir)
         elif lang == "zh":
             speakers[lang] = speaker.ChineseMashupSpeaker(audio_dir)
-    app = ClockApp(speakers)
+    app = SpeakingClock(speakers)
     app.run()
 
 
