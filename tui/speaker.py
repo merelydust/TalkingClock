@@ -89,7 +89,7 @@ class EnglishMashupSpeaker(object):
             "bang.wav",
             f"{now_time.minute:02}.wav",
             "past.wav",
-            f"{now_time.strftime("%I")}.wav",
+            f"{now_time.strftime('%I')}.wav",
         ])
         play_audio_segment(concat_wav_files(files))
 
