@@ -39,12 +39,21 @@ python tui.py
 
 Upon execution, the current time will be prominently displayed in the terminal's center. Users can select the desired language via the selector at the bottom. The selected language will influence the audible announcement of the time. We employ [`gTTs`](https://github.com/pndurette/gTTS) for text-to-speech functionality. Currently, there are only two ways to interact with this application as showing on the footer of it: press `s` to speak current time or press `q` to quit it.
 
+### Advanced: Initiating With a Specific Time
+You can also set a specific time for `tui.py` using a 24-hour format string:
+
+```shell
+python tui.py -t 00:00
+```
+
+With this, `tui.py` will initiate a clock starting at 12:00 am.
+
 ### Advanced: Audio Mashup
 
 For advanced users, our program supports the use of custom audio recordings to override the default TTS engine. This is achieved through a mashup strategy grounded in linguistic principles. For instance, to substitute the default English TTS with custom recordings, use:
 
 ```shell
-python tui.py en=audios/en
+python tui.py -t 03:23 en=audios/en
 ```
 
 Here, `en` is the language code for English. We predominantly follow the [ISO-639 code](https://www.iso.org/iso-639-language-codes.html) standards, with some exceptions adhering to [BCP 47](https://www.rfc-editor.org/info/bcp47). This command specifies that the program will use the audio recordings from the `audios/en` directory to create a mashup, which will then serve as a replacement for the default gTTS English output.

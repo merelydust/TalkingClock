@@ -51,31 +51,46 @@ Speak = Callable[[datetime], None]
 class ChineseMashupSpeaker(object):
     lang = "zh-CN"
 
-    def __init__(self, sample_dir):
+    def __init__(self, sample_dir: str):
         self.sample_dir = sample_dir
 
     def __call__(self, now_time: datetime) -> None:
-        files = map(lambda f: os.path.join(self.sample_dir, f), [
+        hour = int(now_time.strftime("%I"))
+        samples = [
             "pips.wav",
-            *ChineseMashupSpeaker.split_number(int(now_time.strftime("%I"))),
+            *ChineseMashupSpeaker.mashup_hour(hour),
             "dian.wav",
-            *ChineseMashupSpeaker.split_number(now_time.minute),
-            "fen.wav",
-        ])
+        ]
+        if now_time.minute != 0:
+            samples.extend([*ChineseMashupSpeaker.mashup_minute(now_time.minute), "fen.wav"])
+        files = [os.path.join(self.sample_dir, sample) for sample in samples]
         play_audio_segment(concat_wav_files(files))
 
     @staticmethod
-    def split_number(n) -> List[str]:
-        if n < 0 or n > 100:
-            return []
+    def mashup_hour(n: int) -> List[str]:
+        assert 0 < n <= 12
         if 0 < n <= 10:
-            return [f"{n:02}.wav"]
-        elif 10 < n < 20:
-            return ["10.wav", f"{n % 10:02}.wav"]
-        elif 20 <= n <= 99:
-            return [f"{n // 10:02}.wav", "10.wav", f"{n % 10:02}.wav"]
+            parts = [n]
+        elif 10 < n <= 12:
+            parts = [10, n % 10]
         else:
-            return []
+            parts = []
+        return [f"{x:02}.wav" for x in parts]
+
+    @staticmethod
+    def mashup_minute(n: int) -> List[str]:
+        assert 0 <= n <= 59
+        if n == 0:
+            parts = [n]
+        elif 0 < n <= 10:
+            parts = [0, n]
+        elif 10 < n < 20:
+            parts = [10, n % 10]
+        elif 20 <= n <= 59:
+            parts = [n // 10, 10, n % 10]
+        else:
+            parts = []
+        return [f"{x:02}.wav" for x in parts]
 
 
 class EnglishMashupSpeaker(object):
@@ -85,12 +100,13 @@ class EnglishMashupSpeaker(object):
         self.sample_dir = sample_dir
 
     def __call__(self, now_time: datetime) -> None:
-        files = map(lambda f: os.path.join(self.sample_dir, f), [
+        samples = [
             "bang.wav",
             f"{now_time.minute:02}.wav",
             "past.wav",
             f"{now_time.strftime('%I')}.wav",
-        ])
+        ]
+        files = [os.path.join(self.sample_dir, sample) for sample in samples]
         play_audio_segment(concat_wav_files(files))
 
 
