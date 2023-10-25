@@ -105,7 +105,9 @@ Challenges & Possible Improvement:
 
 * Xiaoling (River): 
 
-  Challenges: Upon completing the principal portion of the code, I encountered difficulties incorporating a theme customization feature. Regrettably, the initial planning and process did not include the utilization of CSS variables to define colors. This omission rendered the task of rewriting all the color codes particularly exasperating. Consequently, due to time constraints, I was compelled to abandon this addition.
+  Challenges: Upon completing the principal portion of the code, I encountered difficulties incorporating a theme customization feature. Regrettably, the initial planning and process did not include the utilization of CSS variables to define colors. This omission rendered the task of rewriting all the color codes particularly exasperating. Consequently, due to time constraints, I was compelled to abandon this addition. 
+
+  And a notable limitation of the Web Speech API lies in its handling of the time "00:00" in English, where it is read as "zero hundred hours", while in other languages "00:00" will be read correctly. Initially, I contemplated rectifying this by implementing specific rules in the code. However, upon reflection, I believe it is important to maintain transparency regarding the actual performance capabilities of Google's Model.
 
   Possible Improvements: Moving forward, a comprehensive listing and thoughtful contemplation of desired functionalities is imperative prior to the commencement of the coding process. This proactive approach will undoubtedly facilitate a smoother development experience and the seamless integration of various features.
 

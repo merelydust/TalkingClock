@@ -85,9 +85,6 @@ function Clock() {
   return (
     <div className="clock-container">
       <h2>{time.toLocaleTimeString()}</h2>
-      <div className="test">
-
-      </div>
       <Button
         onClick={() => readTime(time.toLocaleTimeString())}
         style={{
