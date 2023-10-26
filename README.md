@@ -8,7 +8,8 @@
   - [Team Organization & Project Workflow](#team-organization--project-workflow)
   - [Technical Documentation & Reflection](#technical-documentation--reflection)
   - [User Manual for the GUI](#user-manual-for-the-gui)
-  - [Licensing and FAIR Data Principles](#licensing-and-fair-data-principles)
+  - [FAIR Data Principles](#fair-data-principles)
+  - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -112,6 +113,8 @@ Challenges & Possible Improvement:
   Possible Improvements: Moving forward, a comprehensive listing and thoughtful contemplation of desired functionalities is imperative prior to the commencement of the coding process. This proactive approach will undoubtedly facilitate a smoother development experience and the seamless integration of various features.
 
 - Yuxing (Patrick): The TUI version of our talking clock has certain constraints compared to its WebUI counterpart. It currently lacks features like TTS speed adjustment and time modification. Furthermore, it also lacks the potential of integrating more functionalities and AI features. The TUI approach, while appealing to tech enthusiasts, is inherently more basic and rigid. Nonetheless, it offers us a chance to interact with a talking clock directly from the terminal.
+
+- Ömer Tarik: In terms of challenges, it was hard to determine the scope of the speech that is supported by the Turkish language support, because many conventions are less used in day-to-day speech but remain the formal correct way of expressing the time. Furthermore, in order for the speech to sound more natural, I decided to record the numerals both with and without suffices, because the flow of the speech is very important in Turkish. Possible improvements include the use of more pre-recorded samples or merging the recordings better.
 
 ## User Manual for the GUI
 

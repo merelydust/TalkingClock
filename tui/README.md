@@ -1,6 +1,6 @@
 ## Introduction to TUI (Terminal User Interface)
 
-TUI stands for Terminal User Interface. While many might be more familiar with GUIs (Graphical User Interfaces), a TUI provides an alternative that operates within a terminal or command-line environment. For our project, we chose to implement a TUI version of a talking clock alongside a WebUI. Given the simplicity of the project, having a TUI version ensured that all three experienced developers in our team could actively participate and contribute. Moreover, it offers us a chance to interact with a talking clock directly from the terminal, showcasing the versatility of terminal-based applications. 
+TUI stands for Terminal User Interface. While many might be more familiar with GUIs (Graphical User Interfaces), a TUI provides an alternative that operates within a terminal or command-line environment. For our project, we chose to implement a TUI version of a talking clock alongside a WebUI. Given the simplicity of the project, having a TUI version ensured that all three experienced developers in our team could actively participate and contribute. Moreover, it offers us a chance to interact with a talking clock directly from the terminal, showcasing the versatility of terminal-based applications.
 
 ## Prerequisites
 
@@ -8,8 +8,8 @@ TUI stands for Terminal User Interface. While many might be more familiar with G
 
 To audibly announce the time, our program requires command-line tools capable of playing .wav or .mp3 files:
 
-- **Mac OS**: 
-  
+- **Mac OS**:
+
   Built-in player: `afplay`. No additional installations are needed.
 
 - **Linux**:
@@ -23,6 +23,7 @@ To audibly announce the time, our program requires command-line tools capable of
 ### Python Requirements
 
 The necessary Python libraries for this project have been specified in `requirements.txt` within the `tui` folder. Install them using:
+
 ```shell
 pip install -r requirements.txt
 ```
@@ -40,6 +41,7 @@ python tui.py
 Upon execution, the current time will be prominently displayed in the terminal's center. Users can select the desired language via the selector at the bottom. The selected language will influence the audible announcement of the time. We employ [`gTTs`](https://github.com/pndurette/gTTS) for text-to-speech functionality. Currently, there are only two ways to interact with this application as showing on the footer of it: press `s` to speak current time or press `q` to quit it.
 
 ### Advanced: Initiating With a Specific Time
+
 You can also set a specific time for `tui.py` using a 24-hour format string:
 
 ```shell

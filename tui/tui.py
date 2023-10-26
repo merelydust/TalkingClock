@@ -31,6 +31,7 @@ class SpeakingClock(App):
     languages = {
         "English": "en",
         "Chinese": "zh-CN",
+        "Turkish": "tr",
     }
 
     def __init__(self, lag: timedelta, speakers: Dict[str, speaker.Speak]):
@@ -54,7 +55,9 @@ class SpeakingClock(App):
         self.query_one(Digits).update(f"{clock:%I:%M:%S %p}")
 
     def action_speak_time(self) -> None:
-        speak = self.speakers.get(self.language, speaker.new_gtts_speaker(self.language))
+        speak = self.speakers.get(
+            self.language, speaker.new_gtts_speaker(self.language)
+        )
         speak(datetime.now() + self.lag)
 
     @on(Select.Changed)
@@ -78,6 +81,8 @@ def parse_args() -> Tuple[timedelta, Dict[str, str]]:
             override["en"] = audio_dir
         elif language in ("zh", "zh-CN"):
             override["zh-CN"] = audio_dir
+        elif language == "tr":
+            override["tr"] = audio_dir
     return lag, override
 
 
@@ -89,6 +94,8 @@ def main() -> None:
             speakers[lang] = speaker.EnglishMashupSpeaker(sample_dir)
         elif lang in ("zh", "zh-CN"):
             speakers["zh-CN"] = speaker.ChineseMashupSpeaker(sample_dir)
+        elif lang == "tr":
+            speakers["tr"] = speaker.TurkishMashupSpeaker(sample_dir)
     app = SpeakingClock(lag, speakers)
     app.run()
 
