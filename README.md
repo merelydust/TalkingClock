@@ -17,7 +17,7 @@
 
 Our project features two types of user interfaces (UIs) and a folder for audio recordings.
 
-1. **Web UI:** The folder [frontend](./frontend) is a version of Web UI which offers a time announcement feature that is available in **18** different languages. Additionally, users have the option to read a custom time and adjust the speaking speed, with a range of 0.5 to 2, increasing in increments of 0.5. 
+1. **Web UI:** The folder [frontend](./frontend) is a version of Web UI which offers a time announcement feature that is available in **18** different languages. Additionally, users have the option to read a custom time and adjust the speaking speed, with a range of 0.5 to 2, increasing in increments of 0.5.
 
    We have intentionally designed the speed setting in this manner to optimize the performance of Google's Web Speech API, which tends to be less effective when the speed is either extremely slow or fast. Furthermore, we have determined that a step increment of less than 0.5 is often imperceptible to human listeners, thus we have settled on 0.5 as the optimal step size.
 
@@ -29,7 +29,7 @@ Our project features two types of user interfaces (UIs) and a folder for audio r
 
    The Chinese recordings were crafted by River and Patrick, based on the rules explained by the [linguistic structure of Chinese numeral expressions](./audios/zh-CN/README.md).
 
-   The Turkish recordings were created by Ömer,  based on the rules explained by the [Explanation on the Linguistic Structure of Turkish Numeral Expressions](https://github.com/merelydust/TalkingClock/blob/main/audios/tr/README.md).
+   The Turkish recordings were created by Ömer, based on the rules explained by the [Explanation on the Linguistic Structure of Turkish Numeral Expressions](https://github.com/merelydust/TalkingClock/blob/main/audios/tr/README.md).
 
 ## Installation
 
@@ -88,7 +88,7 @@ On Windows
 
 **For Terminal UI:**
 
-Please go to its [README](./tui/README.md)
+Please consult its [README](./tui/README.md).
 
 ## Team Organization & Project Workflow
 
@@ -97,8 +97,8 @@ Xiaoling (River) Lin, Yuxing (Patrick) Ouyang, Ömer Tarik Özyilmaz
 - We use the workflow similar to [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development).
 
 - River developed Web UI in [frontend](./frontend) folder. She crafted the user interface, including styling and interactive elements, utilizing React.js and Ant Design. And River documented the procedure for setting up and running the web page, ensuring a seamless installation process for users.
-- Patrick developed TUI in [tui](./tui) folder, enabling the clock to integrate with custom audio recordings, illustrated  the installation and usage instructions. Patrick also elucidated the linguistic rules of time announcement in Chinese.
-- Ömer contributed Turkish language support, explained the linguistic rules of time announcement in Turkish, wrote the user manual, recorded the video presentation, established the FAIR principles for the project.
+- Patrick developed TUI in [tui](./tui) folder, enabling the clock to integrate with custom audio recordings, illustrated the installation and usage instructions. Patrick also elucidated the linguistic rules of time announcement in Chinese.
+- Ömer contributed Turkish language support, explained the linguistic rules of time announcement in Turkish, wrote the user manual, recorded the video presentation, and established the FAIR principles and ethical considerations for the project.
 - All team members provided test cases to test our project. If anything went wrong, we fixed it.
 
 ## Technical Documentation & Reflection
@@ -140,7 +140,7 @@ The Web UI has a user-friendly interface that is simple, yet versatile. Upon sta
 - _Read My Time_ prompts the user with a pop-up that allows for the utterance of a custom time rather than the current time.
 - _Settings_ (the gear icon) allows the user to set one of the **18** supported languages and to adjust the playing speed of the language.
 
-For the TUI user manual, please consult the [documentation on usage](tui/README.md#usage)
+For the TUI user manual, please consult the [documentation on usage](tui/README.md#usage).
 
 ## FAIR Data Principles
 
@@ -150,6 +150,10 @@ We ensured that our audio data adheres to the Findable, Accessible, Interoperabl
 - **Accessible**: the audio files are easily accessible from our repository. We allow for controlled access since we want to ensure the data security of our voices. Users do have to agree to our license that restricts the commercial use of the data.
 - **Interoperable**: the audio files are interoperable by any interested party because of the standardized format across the files. We decided to use the `.wav`-format, seeing that it is considered a standard audio format in the field. This allows for interoperability across different operating systems, applications, and analysis software.
 - **Reusable**: the data also promotes reuse for related research or applications. The licensing only restricts commercial use, however, also allows for building upon the current dataset. The data is furthermore well-documented and machine-readable.
+
+## Ethical Considerations
+
+There are no obvious ethical considerations for this project. Yet, since we are sharing data containing our personal voices, we have to consider the possible implications of this decision. Our voices could, for example, be used by bad actors to clone our voice in order to damage our reputation in any way. Therefore, we decided for protected access rather than public access to this repository. Other ethical concerns would include the damage that can be caused by modifying our software in any dangerous manner, but this is unlikely per the limited scope of the project.
 
 ## License
 
