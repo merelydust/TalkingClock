@@ -58,7 +58,10 @@ class SpeakingClock(App):
         speak = self.speakers.get(
             self.language, speaker.new_gtts_speaker(self.language)
         )
-        speak(datetime.now() + self.lag)
+        try:
+            speak(datetime.now() + self.lag)
+        except Exception as err:
+            self.notify(str(err), title="Error", severity="error")
 
     @on(Select.Changed)
     def select_changed(self, event: Select.Changed) -> None:
