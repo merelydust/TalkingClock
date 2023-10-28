@@ -99,7 +99,7 @@ Xiaoling (River) Lin, Yuxing (Patrick) Ouyang, Ömer Tarik Özyilmaz
 - River developed Web UI in [frontend](./frontend) folder. She crafted the user interface, including styling and interactive elements, utilizing React.js and Ant Design. And River documented the procedure for setting up and running the web page, ensuring a seamless installation process for users.
 - Patrick developed TUI in [tui](./tui) folder, enabling the clock to integrate with custom audio recordings, illustrated the installation and usage instructions. Patrick also elucidated the linguistic rules of time announcement in Chinese.
 - Ömer contributed Turkish language support, explained the linguistic rules of time announcement in Turkish, wrote the user manual, recorded the video presentation, and established the FAIR principles and ethical considerations for the project.
-- All team members provided test cases to test our project. If anything went wrong, we fixed it.
+- All team members provided test cases to test our project. If anything went wrong, we fixed it. Furthermore, all team members contributed to the video presentation by providing feedback to Ömer. Since the video did not need editing, it was difficult to split this work in another way.
 
 ## Technical Documentation & Reflection
 
