@@ -65,37 +65,28 @@ class SpeakingClock(App):
         self.language = str(event.value)
 
 
-def parse_args() -> Tuple[timedelta, Dict[str, str]]:
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", type=str, help="specify the time")
     parsed_args, unparsed_args = parser.parse_known_args()
     lag = timedelta()
-    if (val := parsed_args.t) is not None:
+    if (time_val := parsed_args.t) is not None:
         now = datetime.now()
-        time = datetime.combine(now, datetime.strptime(val, "%H:%M").time())
+        time = datetime.combine(now, datetime.strptime(time_val, "%H:%M").time())
         lag = time - now
-    override = {}
-    for arg in unparsed_args:
-        language, audio_dir = arg.split("=")
-        if language == "en":
-            override["en"] = audio_dir
-        elif language in ("zh", "zh-CN"):
-            override["zh-CN"] = audio_dir
-        elif language == "tr":
-            override["tr"] = audio_dir
-    return lag, override
-
-
-def main() -> None:
-    lag, override = parse_args()
     speakers = {}
-    for lang, sample_dir in override.items():
-        if lang == "en":
-            speakers[lang] = speaker.EnglishMashupSpeaker(sample_dir)
-        elif lang in ("zh", "zh-CN"):
-            speakers["zh-CN"] = speaker.ChineseMashupSpeaker(sample_dir)
-        elif lang == "tr":
-            speakers["tr"] = speaker.TurkishMashupSpeaker(sample_dir)
+    for arg in unparsed_args:
+        language, sample_dir = arg.split("=")
+        match language:
+            case "en":
+                speakers["en"] = speaker.EnglishMashupSpeaker(sample_dir)
+            case "zh" | "zh-CN":
+                speakers["zh-CN"] = speaker.ChineseMashupSpeaker(sample_dir)
+            case "tr":
+                speakers["tr"] = speaker.TurkishMashupSpeaker(sample_dir)
+            case _:
+                continue
+
     app = SpeakingClock(lag, speakers)
     app.run()
 

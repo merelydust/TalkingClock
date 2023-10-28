@@ -12,7 +12,8 @@ __all__ = [
     "Speak",
     "ChineseMashupSpeaker",
     "EnglishMashupSpeaker",
-    "TurkishMashupSpeaker" "new_gtts_speaker",
+    "TurkishMashupSpeaker",
+    "new_gtts_speaker",
 ]
 
 
@@ -59,7 +60,6 @@ class MashupSpeaker:
 
 class ChineseMashupSpeaker(MashupSpeaker):
     def __init__(self, sample_dir: str):
-        self.sample_dir = sample_dir
         super().__init__(sample_dir, "zh-CN")
 
     def __call__(self, now_time: datetime) -> None:
@@ -103,7 +103,6 @@ class ChineseMashupSpeaker(MashupSpeaker):
 
 class TurkishMashupSpeaker(MashupSpeaker):
     def __init__(self, sample_dir: str):
-        self.sample_dir = sample_dir
         super().__init__(sample_dir, "tr")
 
     def __call__(self, now_time: datetime) -> None:
@@ -156,7 +155,6 @@ class TurkishMashupSpeaker(MashupSpeaker):
 
 class EnglishMashupSpeaker(MashupSpeaker):
     def __init__(self, sample_dir: str):
-        self.sample_dir = sample_dir
         super().__init__(sample_dir, "en")
 
     def __call__(self, now_time: datetime) -> None:
