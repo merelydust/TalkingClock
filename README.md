@@ -153,7 +153,7 @@ We ensured that our audio data adheres to the Findable, Accessible, Interoperabl
 
 ## Ethical Considerations
 
-There are no obvious ethical considerations for this project. Yet, since we are sharing data containing our personal voices, we have to consider the possible implications of this decision. Our voices could, for example, be used by bad actors to clone our voice in order to damage our reputation in any way. Therefore, we decided for protected access rather than public access to this repository. Other ethical concerns would include the damage that can be caused by modifying our software in any dangerous manner, but this is unlikely per the limited scope of the project.
+There are no obvious ethical considerations for this project. Yet, since we are sharing data containing our personal voices, we have to consider the possible implications of this decision. Our voices could, for example, be used by bad actors to clone our voice in order to damage our reputation in any way. Per the nature of the assignment, we have to set the repository to public, but we plan to set the repository to private after grading has been done to reduce the risk of this happening. Other ethical concerns would include the damage that can be caused by modifying our software in any dangerous manner, but this is unlikely per the limited scope of the project.
 
 ## License
 
